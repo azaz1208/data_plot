@@ -13,8 +13,8 @@ Session(app)
 @app.route('/', methods=['GET', 'POST'])
 def test_post():
     if request.method == "POST":
-        if "excel_file" in request.files:
-            file = request.files["excel_file"]
+        if "file" in request.files:
+            file = request.files["file"]
             if file.filename == "":
                 return jsonify({"Error": "No file selected"})
             elif file.filename[-5:] == ".xlsx":
